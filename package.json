@@ -1,0 +1,23 @@
+{
+  "name": "festivalmusica_inicio",
+  "version": "1.0.0",
+  "description": "Proyecto con Gulp, SASS y HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisSaucedoo/proyecto-festivalmusica.git"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp"
+  ],
+  "author": "Luis Eduardo Saucedo Perez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisSaucedoo/proyecto-festivalmusica/issues"
+  },
+  "homepage": "https://github.com/LuisSaucedoo/proyecto-festivalmusica#readme"
+}
