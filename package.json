@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/LuisSaucedoo/proyecto-festivalmusica#readme",
   "devDependencies": {
+    "gulp": "^4.0.2",
     "sass": "^1.49.9"
   }
 }
