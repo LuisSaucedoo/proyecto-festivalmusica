@@ -1,16 +1,16 @@
 
-function tarea( done ) {
-    console.log("Desde la primer tarea");
+// Extraer dependencias:
+const { src, dest } = require("gulp");
+const sass = require("gulp-sass")(require("sass")); // No es sintaxis de gulp, sino de nodejs
+
+// 3 pasos para realizar para compilar sass
+function css( done ) {
+    // 1. Identificar el archivo .SCSS a compilar
+    src("src/scss/app.scss")
+        .pipe( sass() ) // 2. Compilarlo
+        .pipe( dest("build/css") ) // 3. Almacenarla    
 
     done();
 }
-// en done puede ser: callback, fn o done
 
-function tarea2( done ) {
-    console.log("Desde la segunda tarea");
-
-    done();
-}
-
-exports.tarea = tarea;
-exports.tarea2 = tarea2;
+exports.css = css;
