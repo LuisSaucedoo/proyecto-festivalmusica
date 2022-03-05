@@ -400,3 +400,10 @@ h3 {
 .navegacion-principal a:hover {
   color: #fef46d;
 }
+
+.pruebaMixin {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: black;
+  letter-spacing: 1px;
+}
