@@ -1,6 +1,6 @@
 
 // Extraer dependencias:
-const { src, dest } = require("gulp");
+const { src, dest, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass")); // No es sintaxis de gulp, sino de nodejs
 
 // 3 pasos para realizar para compilar sass
@@ -13,4 +13,12 @@ function css( done ) {
     done();
 }
 
+// Crear un watch
+function dev( done ) {
+    
+    watch("src/scss/app.scss", css)// parametros: 1.A qué archivo le haré watch y 2. Qué función estará asociada
+    done();
+}
+
 exports.css = css;
+exports.dev = dev;
