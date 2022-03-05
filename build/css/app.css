@@ -1,7 +1,7 @@
+@charset "UTF-8";
 h1 {
   color: black;
 }
 
-body {
-  background-color: black;
-}
+/* @import en app.scss lo hace disponible en todos los archivos
+   @use únicamente lo hace disponible donde queramos importarlos, por eso colocalos @use en contenido */

@@ -1,7 +1,6 @@
-// Sintaxis antigua:
-@import "base/variables";
-@import "contenido/contenido";
+// Sintaxis nueva:
+@use "base";
+@use "contenido";
 
-body {
-    background-color: $rojo;
-}
+/* @import en app.scss lo hace disponible en todos los archivos
+   @use únicamente lo hace disponible donde queramos importarlos, por eso colocalos @use en contenido */
