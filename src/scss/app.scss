@@ -1,6 +1,5 @@
 // Sintaxis nueva:
 @use "base";
-@use "contenido";
 
 /* @import en app.scss lo hace disponible en todos los archivos
    @use únicamente lo hace disponible donde queramos importarlos, por eso colocalos @use en contenido */

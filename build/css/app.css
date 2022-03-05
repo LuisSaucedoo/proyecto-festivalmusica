@@ -1,6 +1,11 @@
 @charset "UTF-8";
 h1 {
-  color: black;
+  color: red;
+  text-transform: uppercase;
+}
+
+header {
+  color: blue;
 }
 
 /* @import en app.scss lo hace disponible en todos los archivos
