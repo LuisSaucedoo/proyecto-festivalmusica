@@ -21,5 +21,9 @@
 }
 
 .pruebaMixin {
+    @include m.heading(v.$amarillo);
+}
+
+.textoMixin {
     @include m.heading;
 }

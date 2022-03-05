@@ -1,6 +1,8 @@
-@mixin heading {
+@use "variables" as v;
+
+@mixin heading( $color: blue ) { // blue pasa a ser un valor default
     text-transform: uppercase;
     font-size: 2.4rem;    
-    color: black;
+    color: $color;
     letter-spacing: 1px;
 }
