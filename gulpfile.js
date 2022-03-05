@@ -2,11 +2,13 @@
 // Extraer dependencias:
 const { src, dest, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass")); // No es sintaxis de gulp, sino de nodejs
+const plumber = require("gulp-plumber");
 
 // 3 pasos para realizar para compilar sass
 function css( done ) {
     // 1. Identificar el archivo .SCSS a compilar
     src("src/scss/**/*.scss")
+        .pipe( plumber())
         .pipe( sass() ) // 2. Compilarlo
         .pipe( dest("build/css") ) // 3. Almacenarla    
 
