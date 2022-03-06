@@ -1,19 +1,35 @@
+// Extrayendo dependencias:
 
-// Extraer dependencias:
-const { src, dest, watch } = require("gulp");
+// CSS
+const { src, dest, watch, parallel} = require("gulp");
 const sass = require("gulp-sass")(require("sass")); // No es sintaxis de gulp, sino de nodejs
 const plumber = require("gulp-plumber");
 
-// 3 pasos para realizar para compilar sass
+// Imágenes
+const webp = require("gulp-webp");
+
 function css( done ) {
-    // 1. Identificar el archivo .SCSS a compilar
-    src("src/scss/**/*.scss")
-        .pipe( plumber())
+    src("src/scss/**/*.scss") // 1. Identificar el archivo .SCSS a compilar
+        .pipe( plumber() )
         .pipe( sass() ) // 2. Compilarlo
-        .pipe( dest("build/css") ) // 3. Almacenarla    
+        .pipe( dest("build/css") ) // 3. Almacenarla en el disco duro   
 
     done();
 }
+
+function versionWebp( done ) {
+
+    const opciones= {
+        quality: 50
+    };
+
+    src("src/img/**/*.{png,jpg}")
+        .pipe( webp(opciones) )
+        .pipe( dest("build/img") )
+
+    done();
+}
+
 
 // Crear un watch
 function dev( done ) {
@@ -22,4 +38,5 @@ function dev( done ) {
 }
 
 exports.css = css;
-exports.dev = dev;
+exports.versionWebp = versionWebp;
+exports.dev = parallel(versionWebp, dev);
