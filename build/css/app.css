@@ -1,5 +1,3 @@
-@charset "UTF-8";
-/*Instalación de plumber, en consola: npm i --save-dev gulp-plumber*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -393,24 +391,33 @@ h3 {
   color: #fff;
 }
 
+.navegacion-principal {
+  background-color: red;
+}
+@media (min-width: 480px) {
+  .navegacion-principal {
+    background-color: blue;
+  }
+}
+@media (min-width: 768px) {
+  .navegacion-principal {
+    background-color: cornflowerblue;
+  }
+}
+@media (min-width: 992px) {
+  .navegacion-principal {
+    background-color: green;
+  }
+}
+@media (min-width: 1200px) {
+  .navegacion-principal {
+    background-color: white;
+  }
+}
 .navegacion-principal a {
   color: #fff;
   font-size: 2.4rem;
 }
 .navegacion-principal a:hover {
   color: #fef46d;
-}
-
-.pruebaMixin {
-  text-transform: uppercase;
-  font-size: 2.4rem;
-  color: #fef46d;
-  letter-spacing: 1px;
-}
-
-.textoMixin {
-  text-transform: uppercase;
-  font-size: 2.4rem;
-  color: blue;
-  letter-spacing: 1px;
 }
