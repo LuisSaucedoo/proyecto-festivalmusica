@@ -59,14 +59,23 @@ function versionAvif( done ) {
     done();
 }
 
+function javascript( done ) {
+    src("src/js/**/*.js")
+        .pipe( dest("build/js"))
+    
+    done();
+}
+
 // Crear un watch
 function dev( done ) {
     watch("src/scss/**/*.scss", css)// parametros: 1.A qué archivo le haré watch y 2. Qué función estará asociada
+    watch("src/js/**/*.js", javascript)
     done();
 }
 
 exports.css = css;
+exports.js = javascript;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
-exports.dev = parallel(imagenes, versionWebp, versionAvif, dev);
+exports.dev = parallel(imagenes, versionWebp, versionAvif, javascript, dev);
