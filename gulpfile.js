@@ -7,6 +7,7 @@ const plumber = require("gulp-plumber");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const postcss = require("gulp-postcss");
+const sourcemaps = require("gulp-sourcemaps")
 
 // Imágenes
 const cache = require("gulp-cache");
@@ -16,9 +17,11 @@ const avif = require("gulp-avif");
 
 function css( done ) {
     src("src/scss/**/*.scss") // 1. Identificar el archivo .SCSS a compilar
+        .pipe(sourcemaps.init())
         .pipe( plumber() )
         .pipe( sass() ) // 2. Compilarlo
-        .pipe( postcss([autoprefixer(), cssnano]) )
+        .pipe( postcss([autoprefixer(), cssnano]) ) // Mejoras de CSS
+        .pipe(sourcemaps.write("."))
         .pipe( dest("build/css") ) // 3. Almacenarla en el disco duro   
 
     done();
