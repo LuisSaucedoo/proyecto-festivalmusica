@@ -35,10 +35,29 @@ function mostrarImagen(id) {
     <img loading="lazy" width="200" height="300" src="build/img/grande/${id}.jpg" alt="Imagen galeria">
     `;
 
+    // Crea el Overlay con la imagen
     const overlay = document.createElement("DIV");
     overlay.appendChild(imagen);
     overlay.classList.add("overlay");
+    overlay.onclick = function() {
+        const body = document.querySelector("body");
+        body.classList.remove("fijar-body");
+        overlay.remove();
+    }
 
+    // Botón para cerra el Modal
+    const cerrarModal = document.createElement("P");
+    cerrarModal.textContent = "X";
+    cerrarModal.classList.add("btn-cerrar");
+    cerrarModal.onclick = function() {
+        const body = document.querySelector("body");
+        body.classList.remove("fijar-body");
+        overlay.remove(); //remove es un método de JavaScript
+    }
+    overlay.appendChild(cerrarModal);
+
+    // Añadirlo al HTML
     const body = document.querySelector("body");
     body.appendChild(overlay);
+    body.classList.add("fijar-body");
 }
